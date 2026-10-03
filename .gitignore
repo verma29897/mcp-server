@@ -1,0 +1,17 @@
+# Build output
+/bin/
+/dist/
+mcp-server
+
+# Local configuration and secrets
+.env
+*.local.env
+
+# Go tooling
+*.out
+*.test
+
+# Local AI workspace configuration
+.agents/
+.codex/
+skills-lock.json
