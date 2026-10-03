@@ -145,7 +145,9 @@ jobs:
           provenance: false
 
       - name: Scan image
-        uses: aquasecurity/trivy-action@0.28.0
+        # v0.36.0, pinned by commit to prevent a mutable tag from changing
+        # the code executed inside this security-sensitive job.
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
         with:
           image-ref: company-mcp-server:${{ github.sha }}
           format: table
@@ -154,7 +156,8 @@ jobs:
           ignore-unfixed: true
 
       - name: Generate SBOM
-        uses: aquasecurity/trivy-action@0.28.0
+        # v0.36.0
+        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25
         with:
           image-ref: company-mcp-server:${{ github.sha }}
           format: cyclonedx

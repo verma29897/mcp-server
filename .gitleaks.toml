@@ -1,0 +1,8 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Non-secret idempotency key used by a notification retry unit test"
+paths = ['''tests/services/customer_test\.go''']
+regexTarget = "line"
+regexes = ['''IdempotencyKey:\s*"key-12345678"''']
